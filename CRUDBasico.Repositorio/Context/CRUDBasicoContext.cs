@@ -8,12 +8,9 @@ namespace CRUDBasico.Repositorio.Context
     {
         public DbSet<Producto> Productos { get; set; }
         public DbSet<Categoria> Categorias { get; set; }
-        //public DbSet<ImagenProducto> ImagenesProducto { get; set; }
 
         public CRUDBasicoContext(DbContextOptions options) : base(options)
-        {
-
-        }
+        { }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

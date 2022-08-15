@@ -27,14 +27,11 @@ namespace CRUDBasico.Repositorio.Data
             _ = builder.Property(c => c.FechaAlta)
                 .HasColumnName("ccb_fec_alt")
                 .HasColumnType("TIMESTAMP")
-                .ValueGeneratedOnAdd()
                 .HasValueGenerator<DateTimeGenerator>();
 
             _ = builder.Property(c => c.FechaActualizacion)
                 .HasColumnName("ccb_fec_act")
-                .HasColumnType("TIMESTAMP")
-                .ValueGeneratedOnUpdate()
-                .HasValueGenerator<DateTimeGenerator>();
+                .HasColumnType("TIMESTAMP");
 
             _ = builder.Property(c => c.FechaBaja)
                 .HasColumnName("ccb_fec_baj")

@@ -35,25 +35,20 @@ namespace CRUDBasico.Repositorio.Data
             _ = builder.Property(p => p.FechaAlta)
                 .HasColumnName("pcb_fec_alt")
                 .HasColumnType("TIMESTAMP")
-                .ValueGeneratedOnAdd()
                 .HasValueGenerator<DateTimeGenerator>();
 
             _ = builder.Property(p => p.FechaActualizacion)
                 .HasColumnName("pcb_fec_act")
-                .HasColumnType("TIMESTAMP")
-                .ValueGeneratedOnUpdate()
-                .HasValueGenerator<DateTimeGenerator>();
+                .HasColumnType("TIMESTAMP");
 
             _ = builder.Property(p => p.FechaBaja)
                 .HasColumnName("pcb_fec_baj")
                 .HasColumnType("TIMESTAMP");
 
-
-
             // Relaciones
             _ = builder.HasOne(p => p.Categoria)
                 .WithMany()
-                .HasForeignKey("pcb_id_ccb");
+                .HasForeignKey("pcb_id_ccb"); // Shadow Property
         }
     }
 }
